@@ -1,0 +1,24 @@
+openai
+transformers
+huggingface_hub
+tqdm
+rdkit
+nltk
+selfies
+python-Levenshtein
+numpy
+pandas
+scikit-learn
+matplotlib
+psutil
+
+# setuptools>=81 removed pkg_resources, which the vendored localmapper/
+# package (below) imports.
+setuptools<81
+
+# torch/dgl/dgllife (deps for the vendored localmapper/ package, used by
+# eval_2_save_metrics.py to count unique reaction templates) are NOT listed
+# here — plain `pip install torch dgl` resolves incompatible versions (DGL's
+# official wheels lag behind PyTorch releases). Install them separately,
+# matching your CUDA setup — see the Setup section in README.md for the
+# exact commands and why.
